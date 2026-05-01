@@ -12,6 +12,12 @@ import { useLocation } from 'react-router-dom';
 export function TopBarChart() {
   const location = useLocation();
   const path = location.pathname;
+  
+  // Hide chart on home page, only show on /view-more/* routes
+  if (path === '/') {
+    return null;
+  }
+  
   const homeData = [
   {
     name: 'LB',
